@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b18df66d-c6db-496a-90da-8e6bd401db00" name="Changes" comment="django1">
+      <change afterPath="$PROJECT_DIR$/catalog/templates-catalog/contacts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalog/templates-catalog/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/templates/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates-catalog/catalog/contacts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates-catalog/catalog/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,29 +48,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Notification.DisplayName-DoNotAsk-Execution&quot;: &quot;External process execution failed&quot;,
-    &quot;Notification.DoNotAsk-Execution&quot;: &quot;true&quot;,
-    &quot;Python.admin.executor&quot;: &quot;Run&quot;,
-    &quot;Python.apps.executor&quot;: &quot;Run&quot;,
-    &quot;Python.manage.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature1&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Users/домашний/AppData/Roaming/Python/Scripts/django/catalog/migrations&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Notification.DisplayName-DoNotAsk-Execution": "External process execution failed",
+    "Notification.DoNotAsk-Execution": "true",
+    "Python.admin.executor": "Run",
+    "Python.apps.executor": "Run",
+    "Python.manage.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature1",
+    "last_opened_file_path": "E:/Users/домашний/AppData/Roaming/Python/Scripts/django/catalog/templates",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Users\домашний\AppData\Roaming\Python\Scripts\django\catalog\templates" />
+      <recent name="E:\Users\домашний\AppData\Roaming\Python\Scripts\django\catalog\templates\templates\catalog" />
+      <recent name="E:\Users\домашний\AppData\Roaming\Python\Scripts\django\catalog" />
+      <recent name="E:\Users\домашний\AppData\Roaming\Python\Scripts\django\catalog\templates.catalog\templates\catalog" />
       <recent name="E:\Users\домашний\AppData\Roaming\Python\Scripts\django\catalog\migrations" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Users\домашний\AppData\Roaming\Python\Scripts\django\catalog\templates\catalog" />
+      <recent name="E:\Users\домашний\AppData\Roaming\Python\Scripts\django\config" />
+      <recent name="E:\Users\домашний\AppData\Roaming\Python\Scripts\django\catalog" />
       <recent name="E:\Users\домашний\AppData\Roaming\Python\Scripts\django\static\css" />
       <recent name="E:\Users\домашний\AppData\Roaming\Python\Scripts\django\static\js" />
-      <recent name="E:\Users\домашний\AppData\Roaming\Python\Scripts\django\config" />
-      <recent name="E:\Users\домашний\AppData\Roaming\Python\Scripts\django\static" />
-      <recent name="E:\Users\домашний\AppData\Roaming\Python\Scripts\django\static\css\css" />
     </key>
   </component>
   <component name="RunManager" selected="Python.manage">
