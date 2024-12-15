@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b18df66d-c6db-496a-90da-8e6bd401db00" name="Changes" comment="django1">
-      <change afterPath="$PROJECT_DIR$/catalog/management/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog/management/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog/management/commands/add_products.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/catalog/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/catalog/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/catalog/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/catalog/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
