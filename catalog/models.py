@@ -37,10 +37,8 @@ class Product(models.Model):
     )
     category = models.ForeignKey(
         Category,
-        on_delete=models.SET_NULL,
+        on_delete=models.CASCADE,
         verbose_name="Категория",
-        null=True,
-        blank=True,
         related_name='products'
     )
     price = models.PositiveIntegerField()
