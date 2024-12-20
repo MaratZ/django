@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b18df66d-c6db-496a-90da-8e6bd401db00" name="Changes" comment="django1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog.json" beforeDir="false" afterPath="$PROJECT_DIR$/catalog.json" afterDir="false" />
-    </list>
+    <list default="true" id="b18df66d-c6db-496a-90da-8e6bd401db00" name="Changes" comment="django1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
