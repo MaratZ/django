@@ -27,7 +27,7 @@ class Product(models.Model):
         help_text="Введите наименование продукта",
     )
     description = models.TextField(
-        max_length=150, verbose_name="Описание продукта", blank=True, null=True
+        max_length=300, verbose_name="Описание продукта", blank=True, null=True
     )
     photo = models.ImageField(
         upload_to="products/photo",
@@ -37,8 +37,10 @@ class Product(models.Model):
     )
     category = models.ForeignKey(
         Category,
-        on_delete=models.CASCADE,
+        on_delete=models.SET_NULL,
         verbose_name="Категория",
+        null=True,
+        blank=True,
         related_name='products'
     )
     price = models.PositiveIntegerField()
