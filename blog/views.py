@@ -1,50 +1,42 @@
-from django.views.generic import DetailView, ListView, DeleteView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy, reverse
-from .forms import BlogForm
-from .models import Blog
-from django.shortcuts import render
+from blog.models import Blog
 
 
 class BlogListView(ListView):
     model = Blog
-    template_name = 'blog/home.html'
-    context_object_name = 'blogs'
 
     def get_queryset(self):
-        return Blog.objects.filter(publication_sign=True)
-
-
-class BlogCreateView(CreateView):
-    model = Blog
-    form_class = BlogForm
-    template_name = 'blog/blog_form.html'
-    success_url = reverse_lazy('blog:home')
+        queryset = super().get_queryset()
+        return queryset.filter(publication_attribute=True)
 
 
 class BlogDetailView(DetailView):
     model = Blog
-    template_name = 'blog/blog.html'
-    context_object_name = 'blog'
+    template_name = 'blog/blog_detail.html'
 
     def get_object(self, queryset=None):
         self.object = super().get_object(queryset)
-        self.object.count_of_views += 1
+        self.object.views_counter += 1
         self.object.save()
         return self.object
 
 
+class BlogCreateView(CreateView):
+    model = Blog
+    fields = ('heading', 'content', 'preview', 'publication_attribute')
+    success_url = reverse_lazy('blog:blog_list')
+
+
 class BlogUpdateView(UpdateView):
     model = Blog
-    form_class = BlogForm
-    template_name = 'blog/blog_form.html'
-    success_url = reverse_lazy('blog:home')
+    fields = ('heading', 'content', 'preview', 'publication_attribute')
+    success_url = reverse_lazy('blog:blog_detail')
 
     def get_success_url(self):
-        return reverse('blog:blog_detail', args=[self.kwargs.get('pk')])
+        return reverse(viewname='blog:blog_detail', args=[self.kwargs.get('pk')])
 
 
 class BlogDeleteView(DeleteView):
     model = Blog
-    template_name = 'blog/blog_delete.html'
-    success_url = reverse_lazy('blog:home')
+    success_url = reverse_lazy('blog:blog_list')
