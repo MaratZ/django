@@ -1,21 +1,16 @@
-{% extends 'blog/base.html' %}
+{% extends 'catalog/base.html' %}
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-6">
             <form class="row" method="post" enctype="multipart/form-data">
                 <div class="card">
+                    <p class="card-text">Действительно хотите удалить {{ object.heading }}</p>
                     <div class="card-body">
                         {% csrf_token %}
-                        {{ form.as_p }}
                     </div>
-                    <button type="submit" class="btn btn-primary">
-                        {% if object %}
-                        Сохранить
-                        {% else %}
-                        Запостить новость
-                        {% endif %}
-                    </button>
+                    <button type="submit" class="btn btn-danger">Удалить</button>
+                    <a class="btn btn-secondary" href="{% url 'blog:blog_list' %}" role="button">Отменить</a>
                 </div>
             </form>
         </div>

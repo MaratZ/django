@@ -43,7 +43,7 @@ class Product(models.Model):
         blank=True,
         related_name='products'
     )
-    price = models.PositiveIntegerField()
+    price = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(
         auto_now_add=True, verbose_name="Дата последнего изменения"

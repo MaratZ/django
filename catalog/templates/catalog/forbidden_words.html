@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<details>
+    <summary>Справка</summary>
+    <p>Запрещённые слова:</p>
+    <ul>
+        {% for word in forbidden_words %}
+        <li>{{ word }}</li>
+        {% endfor %}
+    </ul>
+</details>
+</html>

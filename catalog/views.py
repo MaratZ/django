@@ -1,9 +1,17 @@
 from django.views.generic import ListView,DetailView,CreateView, UpdateView, DeleteView
-from django.urls import reverse_lazy, reverse
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
-
+from django.urls import reverse_lazy
+from django.conf import settings
+from django.shortcuts import render
+from catalog.forms import ProductForm
 from catalog.models import Product
+
+
+
+def your_view(request):
+    context = {
+        'forbidden_words': settings.forbidden_words,
+    }
+    return render(request, 'catalog/product_form.html', context)
 
 
 class HomeListView(ListView):
@@ -36,13 +44,13 @@ class ProductDetailView(DetailView):
 
 class ProductCreateView(CreateView):
     model = Product
-    fields = ['name', 'description', 'photo', 'category', 'price']
+    form_class = ProductForm
     success_url = reverse_lazy('catalog:products_list')
 
 
 class ProductUpdateView(UpdateView):
     model = Product
-    fields = ['name', 'description', 'photo', 'category', 'price']
+    form_class = ProductForm
     success_url = reverse_lazy('catalog:products_list')
 
     def get_success_url(self):
