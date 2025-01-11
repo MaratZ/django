@@ -1,16 +1,62 @@
+from django.views.generic import ListView,DetailView,CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from django.conf import settings
 from django.shortcuts import render
-from django.http import HttpResponse
+from catalog.forms import ProductForm
+from catalog.models import Product
 
 
-def home(request):
-    return render(request, 'catalog/home.html')
+
+def your_view(request):
+    context = {
+        'forbidden_words': settings.forbidden_words,
+    }
+    return render(request, 'catalog/product_form.html', context)
 
 
-def contacts(request):
-    if request.method == "POST":
-        name = request.POST.get('name')
-        phone = request.POST.get('phone')
-        message = request.POST.get('message')
+class HomeListView(ListView):
+    model = Product
+    template_name = 'catalog/home.html'
+    context_object_name = 'product'
 
-        return HttpResponse(f'Спасибо, {name}! Сообщение получено')
-    return render(request, 'catalog/contacts.html')
+
+class ContactsListView(ListView):
+    model = Product
+    template_name = 'catalog/contacts.html'
+
+
+class ProductListView(ListView):
+    model = Product
+    template_name = 'catalog/product_list.html'
+    context_object_name = 'catalog/product_list/html'
+
+
+class ProductDetailView(DetailView):
+    model = Product
+    context_object_name = 'catalog/product_detail.html'
+
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        self.object.views_counter += 1
+        self.object.save()
+        return self.object
+
+
+class ProductCreateView(CreateView):
+    model = Product
+    form_class = ProductForm
+    success_url = reverse_lazy('catalog:products_list')
+
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    form_class = ProductForm
+    success_url = reverse_lazy('catalog:products_list')
+
+    def get_success_url(self):
+        return reverse('catalog:products_detail', args=[self.kwargs.get('pk')])
+
+
+class ProductDeleteView(DeleteView):
+    model = Product
+    success_url = reverse_lazy('catalog:products_list')
