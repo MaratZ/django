@@ -5,23 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b18df66d-c6db-496a-90da-8e6bd401db00" name="Changes" comment="django1">
-      <change afterPath="$PROJECT_DIR$/blog/migrations/0003_alter_blog_preview.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/templates/blog/blog_detali.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/templates/blog/blog_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/templates/blog/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog/templates/catalog/forbidden_words.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalog/migrations/0006_alter_product_purchase_price.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/management/commands/csu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0002_user_token.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/users_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/blog_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/blog_confirm_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/blog_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/blog_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/includes/central_heading.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/includes/inc_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/includes/inc_menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/templates/catalog/product_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/catalog/product_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/templates/catalog/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/catalog/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -49,6 +46,16 @@
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/MaratZ/django.git&quot;,
     &quot;accountId&quot;: &quot;8292f190-f3f8-46b7-8628-06296e277222&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;MaratZ&quot;,
+    &quot;repository&quot;: &quot;django&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -71,7 +78,7 @@
     "Python.apps.executor": "Run",
     "Python.manage.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature26.1",
+    "git-widget-placeholder": "feature27",
     "last_opened_file_path": "E:/Users/домашний/AppData/Roaming/Python/Scripts/django/catalog/templates",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
