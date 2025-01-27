@@ -32,4 +32,12 @@ class ProductForm(ModelForm):
 
         for word in forbidden_words:
             if word in name or word in description:
-                self.add_error('name', 'В названии и описании не должны присутсвтовать слова из списка запрещенных слов')
+                self.add_err0or('name', 'В названии и описании не должны присутсвтовать слова из списка запрещенных слов')
+
+
+
+class ProductModeratorForm(ModelForm):
+    class Meta:
+        model = Product
+        fields = '__all__'
+        exclude = ['publication_status']
