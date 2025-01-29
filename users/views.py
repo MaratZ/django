@@ -37,7 +37,3 @@ def email_verification(request, token):
     user.save()
     return redirect(reverse("users:login"))
 
-
-from django.shortcuts import render
-
-# Create your views here.

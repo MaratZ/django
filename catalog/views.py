@@ -7,6 +7,7 @@ from django.views.generic import (
     DetailView,
     ListView,
     TemplateView,
+    UpdateView,
     )
 
 from catalog.forms import ProductForm, ProductModeratorForm
@@ -46,14 +47,6 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
     model = Product
     template_name = "catalog/product_detail.html"
     context_object_name = "product"
-
-    def get_object(self, queryset=None):
-        self.object = super().get_object(queryset)
-        if self.request.user == self.object.owner:
-            self.object.save()
-            return self.object
-        raise PermissionDenied("У Вас отсутствуют права, обратитесь к администратору!")
-
 
     def get_object(self, queryset=None):
         self.object = super().get_object(queryset)
