@@ -1,6 +1,10 @@
-from django.apps import AppConfig
+from django.contrib import admin
+
 from users.models import User
 
-class UsersConfig(AppConfig):
-    default_auto_field = "django.db.models.BigAutoField"
-    name = "users"
+# Register your models here.
+
+
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+    list_display = ("id", "email")

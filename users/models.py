@@ -1,12 +1,6 @@
-from django.contrib.auth.models import Permission, AbstractUser
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-
-
-
-user = User.objects.get(username='example')
-permission = Permission.objects.get(codename='add_model_name')
-user.user_permissions.add(permission)
 
 class User(AbstractUser):
     username = None
