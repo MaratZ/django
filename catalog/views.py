@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from django.views.generic import (
     CreateView,
@@ -11,12 +12,15 @@ from django.views.generic import (
     )
 
 from catalog.forms import ProductForm, ProductModeratorForm
-from catalog.models import Product
+from catalog.models import Category, Product
+from catalog.services import get_products_by_category, get_products_from_cache
 
 
 class HomeView(ListView):
     model = Product
 
+    def get_queryset(self):
+        return get_products_from_cache()
 
 class ContactsView(TemplateView):
     template_name = "catalog/contacts.html"
@@ -35,6 +39,19 @@ class ProductCreateView(LoginRequiredMixin, CreateView):
         product.save()
         return super().form_valid(form)
 
+class ProductsByCategoryListView(LoginRequiredMixin, ListView):
+    model = Category
+
+    def get(self, request, category_name):
+        category_name = get_object_or_404(Category, name=category_name)
+        # category_name = self.kwargs.get('category_id')
+        products = get_products_by_category(category_name)
+
+        return render(
+            request,
+            "catalog/products_by_category.html",
+            {"catalog": category_name, "products": products},
+        )
 
 class ProductUpdateView(LoginRequiredMixin, CreateView):
     model = Product
@@ -42,6 +59,10 @@ class ProductUpdateView(LoginRequiredMixin, CreateView):
     template_name = "catalog/product_form.html"
     success_url = reverse_lazy("catalog:home")
 
+class CategoryListView(ListView):
+    """Страница категории"""
+    model = Category
+    template_name = "catalog/categories_list.html"
 
 class ProductDetailView(LoginRequiredMixin, DetailView):
     model = Product
