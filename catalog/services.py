@@ -1,33 +1,45 @@
 from django.core.cache import cache
 
 from catalog.models import Product
-from config.settings import CACHE_ENABLED
 
 
-def get_products_from_cache():
-    """Получает данные по продуктам из кэша, если кэш пуст, получает данные из БД"""
-    if not CACHE_ENABLED:
+class ProductService:
+
+    @classmethod
+    def get_products(cls):
         return Product.objects.all()
-    key = "products_list"
-    products = cache.get(key)
-    if products is not None:
+
+    @classmethod
+    def get_product_by_id(cls, product_id):
+        return Product.objects.get(id=product_id)
+
+    @classmethod
+    def get_published_products(cls):
+        return Product.objects.filter(unpublish_product=True)
+
+    @classmethod
+    def get_product_by_name(cls, name_product):
+        return Product.objects.get(name=name_product)
+
+    @classmethod
+    def get_published_products_by_name(cls, name_product):
+        return Product.objects.filter(name=name_product, unpublish_product=True)
+
+    @classmethod
+    def get_published_products_by_category(cls, category_id):
+        cache_key = f"products_queryset{category_id}"
+        products = cache.get(cache_key)
+
+        if products is None:
+            products = list(
+                Product.objects.filter(category_id=category_id, unpublish_product=True)
+            )
+            cache.set(cache_key, products, 60 * 1)
+
         return products
-    products = Product.objects.all()
-    cache.set(key, products)
-    return products
 
-
-def get_products_by_category(category_name):
-    """Получает данные по категориям из кэша, если кэш пуст, получает данные из БД"""
-    if not CACHE_ENABLED:
-        return Product.objects.filter(category_name=category_name)
-
-    key = f"products_by_category_{category_name}"
-    products = cache.get(key)
-    if products is not None:
-        return products
-
-    products = list(Product.objects.filter(category__name=category_name))
-    cache.set(key, products)
-
-    return products
+    @classmethod
+    def get_published_products_by_category_name(cls, name_category):
+        return Product.objects.filter(
+            name_category=name_category, unpublish_product=True
+        )
